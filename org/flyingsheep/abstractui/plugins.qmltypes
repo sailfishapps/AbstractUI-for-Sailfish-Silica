@@ -1,0 +1,55 @@
+import QtQuick.tooling 1.1
+
+// This file describes the plugin-supplied types contained in the library.
+// It is used for QML tooling purposes only.
+
+Module {
+    Component {
+        name: "MDialogStatus"
+        prototype: "QObject"
+        exports: [
+            "DialogStatus 1.0"
+        ]
+        Enum {
+            name: "Status"
+            values: {
+                "Opening": 0,
+                "Open": 1,
+                "Closing": 2,
+                "Closed": 3
+            }
+        }
+    }
+    Component {
+        name: "MPageOrientation"
+        prototype: "QObject"
+        exports: [
+            "PageOrientation 1.0"
+        ]
+        Enum {
+            name: "PageOrientation"
+            values: {
+                "Automatic": 0,
+                "LockPortrait": 1,
+                "LockLandscape": 2,
+                "LockPrevious": 3
+            }
+        }
+    }
+    Component {
+        name: "MPageStatus"
+        prototype: "QObject"
+        exports: [
+            "PageStatus 1.0"
+        ]
+        Enum {
+            name: "Status"
+            values: {
+                "Inactive": 0,
+                "Activating": 1,
+                "Active": 2,
+                "Deactivating": 3
+            }
+        }
+    }
+}
