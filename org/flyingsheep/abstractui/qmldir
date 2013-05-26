@@ -3,8 +3,10 @@ AUIButton 1.0 AUIButton.qml
 AUIButtonColumn 1.0 AUIButtonColumn.qml
 AUIButtonRow 1.0 AUIButtonRow.qml
 AUIButtonStyle 1.0 AUIButtonStyle.qml
+AUICheckBox 1.0 AUICheckBox.qml
 AUICheckBoxStyle 1.0 AUICheckBoxStyle.qml
 AUIDialog 1.0 AUIDialog.qml
+AUILabel 1.0 AUILabel.qml
 AUIMenu 1.0 AUIMenu.qml
 AUIMenuItem 1.0 AUIMenuItem.qml
 AUIMenuLayout 1.0 AUIMenuLayout.qml
@@ -13,6 +15,7 @@ AUIPageStackWindow 1.0 AUIPageStackWindow.qml
 AUIQueryDialog 1.0 AUIQueryDialog.qml
 AUIRadioButton 1.0 AUIRadioButton.qml
 AUISheet 1.0 AUISheet.qml
+AUIStyle 1.0 AUIStyle.qml
 AUITabButton 1.0 AUITabButton.qml
 AUITabGroup 1.0 AUITabGroup.qml
 AUIToolBarLayout 1.0 AUIToolBarLayout.qml

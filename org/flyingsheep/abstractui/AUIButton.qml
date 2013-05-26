@@ -3,4 +3,7 @@ import QtQuick 1.1
 import Sailfish.Silica 1.0
 
 Button {
+    //property Style platformStyle: ButtonStyle {}
+    property AUIStyle platformStyle: null
+    property url iconSource
 }

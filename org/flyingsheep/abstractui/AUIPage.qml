@@ -3,4 +3,6 @@ import QtQuick 1.1
 import Sailfish.Silica 1.0
 
 Page {
+    property Item tools: null;
+    property int orientationLock: PageOrientation.Automatic
    }
