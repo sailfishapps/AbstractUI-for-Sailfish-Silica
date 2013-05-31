@@ -1,4 +1,5 @@
 plugin abstractui
+AUIMenuAction 1.0 AUIMenuAction.qml
 AUIButton 1.0 AUIButton.qml
 AUIButtonColumn 1.0 AUIButtonColumn.qml
 AUIButtonRow 1.0 AUIButtonRow.qml
@@ -11,6 +12,8 @@ AUIMenu 1.0 AUIMenu.qml
 AUIMenuItem 1.0 AUIMenuItem.qml
 AUIMenuLayout 1.0 AUIMenuLayout.qml
 AUIPage 1.0 AUIPage.qml
+AUIPageHeader 1.0 AUIPageHeader.qml
+AUIPageWithMenu 1.0 AUIPageWithMenu.qml
 AUIPageStackWindow 1.0 AUIPageStackWindow.qml
 AUIQueryDialog 1.0 AUIQueryDialog.qml
 AUIRadioButton 1.0 AUIRadioButton.qml
