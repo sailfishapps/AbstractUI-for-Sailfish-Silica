@@ -25,9 +25,19 @@ AUIPageWithMenu {
         }
     ]
 
+    Rectangle {
+        objectName: "rectangle"
+        width: parent.width
+        y: 150
+        z: 1
+        height: parent.height /2
+        color: "black"
+    }
+
     // Place our content in a Column.  The PageHeader is always placed at the top
     // of the page, followed by our content.
     Column {
+        objectName: "column"
         width: page.width
         spacing: theme.paddingLarge
         AUIPageHeader {
