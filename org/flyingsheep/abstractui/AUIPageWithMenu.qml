@@ -4,6 +4,7 @@ import Sailfish.Silica 1.0
 
 Page {
     id: thisPage
+    objectName: "thisPage"
     property Item tools: null;
     property int orientationLock: PageOrientation.Automatic
     property alias menuitems: menuModel.children
@@ -33,10 +34,11 @@ Page {
     //Warning: PullDownMenu must be added to an instance of SilicaFlickable.
     ListView {
         id: menuListView
+        objectName: "menuListView"
         anchors.fill: parent
         //contentHeight: childrenRect.height
 
-        Item { id: menuModel }
+        Item { id: menuModel; objectName: "menuModel"; }
 
         //Harmattan has Menu, Silica has PullDownMenu
         PullDownMenu {
@@ -45,9 +47,10 @@ Page {
 
             //Harmattan has MenuLayout here as child of Menu, parent of Repeater, Silica does not.
             Repeater {
+                objectName: "repeater"
                 model: menuModel.children
                 MenuItem {
-                    z:9999
+                    objectName: "menuItem"
                     text: modelData.text
                     onClicked: modelData.clicked()
                 }
@@ -59,6 +62,8 @@ Page {
             for(var i = 0; i < menuListView.children.length; i++) {
                 console.log("child objectName: " + menuListView.children[i].objectName)
             }
+            console.log ("menuListView.contentItem objectName: " + menuListView.contentItem.objectName)
+            console.log ("menuListView.contentItem child count: " + menuListView.contentItem.children.length)
         }
     }
 }

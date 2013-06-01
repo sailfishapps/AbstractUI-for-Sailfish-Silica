@@ -4,6 +4,7 @@ import org.flyingsheep.abstractui 1.0
 
 AUIPageWithMenu {
     id: page
+    objectName: "firstPage"
     property int qmlCounter: 0
     onQmlCounterChanged: {
         console.log ("onQmlCounterChanged: " + qmlCounter);
@@ -25,6 +26,7 @@ AUIPageWithMenu {
         }
     ]
 
+    //Wacking big black rectangle to demonstrate that menu slides behind it on opening
     Rectangle {
         objectName: "rectangle"
         width: parent.width
