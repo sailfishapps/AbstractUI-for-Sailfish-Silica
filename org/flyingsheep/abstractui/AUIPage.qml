@@ -6,6 +6,9 @@ Page {
     property Item tools: null;
     property int orientationLock: PageOrientation.Automatic
 
+//We now have a dedicated AUIPageWithMenu element to support menus
+//This element is used for Pages that do not require a menu
+/*
     //MENU HANDLING
     //Basic idea for menu handling copied from THP
     //With the following differences:
@@ -32,4 +35,12 @@ Page {
             }
         }
     }
+*/
+    property int hasMenu: 0
+//TODO Add a C++ enum for these values
+        //0: no menu
+        //1: Harmattan style toolbar pullup Menu
+        //2: Sailfish PullDownMenu
+        //3: Sailfish PushUpMenu
+
 }
