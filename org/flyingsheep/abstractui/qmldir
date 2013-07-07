@@ -6,6 +6,7 @@ AUIButtonRow 1.0 AUIButtonRow.qml
 AUIButtonStyle 1.0 AUIButtonStyle.qml
 AUICheckBox 1.0 AUICheckBox.qml
 AUICheckBoxStyle 1.0 AUICheckBoxStyle.qml
+AUIContextMenu 1.0 AUIContextMenu.qml
 AUIDialog 1.0 AUIDialog.qml
 AUIHighlightRectangle 1.0 AUIHighlightRectangle.qml
 AUILabel 1.0 AUILabel.qml

@@ -1,6 +1,7 @@
 import QtQuick 1.1
 //import com.nokia.meego 1.0
 import Sailfish.Silica 1.0
+import org.flyingsheep.abstractui 1.0
 
 Page {
     //MENU HANDLING
@@ -24,7 +25,7 @@ Page {
     id: thisPage
     objectName: "thisPage"
     property Item tools: null;
-    property int orientationLock: PageOrientation.Automatic
+    property int orientationLock: AUIPageOrientation.Automatic
     property alias menuitems: menuModel.children
 
     //not sure if we actually need these signals, it may be enough to pass on the menu.active property via alias
@@ -51,6 +52,15 @@ Page {
     //i) use transitions so the change is not so abrupt
     //ii) store current visibility in an array structure, so the same settings can be restored.
     //iii) maybe the childs can just be made "faint" rather than totally invisible ...
+
+    //Rather than making invisible / visible, reducing and increasing the opacity works very well
+    //this has the added benefit that I can just divide and multiply, and do not need to have an intermediate store
+    //of the previous value
+
+    //Possibly a final verison of this Control will have 3 behaviours for other childs (set by property)
+    // 1: reduceOpacityOnMenuOpening
+    // 2: invisibleOnMenuOpening
+    // 3: slideAwayOnMenuOpening
 
 
     //SilicaFlickable {
@@ -96,7 +106,7 @@ Page {
             //temporary console output, gives me an idea of what belongs to what
             console.log ("thisPage child count: " +thisPage.children.length)
             for(var i = 0; i < thisPage.children.length; i++) {
-                console.log("child objectName: " + thisPage.children[i].objectName)
+                console.log("child objectName: " + thisPage.children[i].objectName +", opacity: " + thisPage.children[i].opactity)
             }
             console.log ("menuListView child count: " +menuListView.children.length)
             for(var i = 0; i < menuListView.children.length; i++) {
@@ -116,26 +126,50 @@ Page {
     //2: Sailfish PullDownMenu
     //3: Sailfish PushUpMenu
 
+    NumberAnimation {
+        id: fadeChilds
+        properties: "opacity"
+        to: 0.2
+        duration: 500
+    }
+
+
+
+
+    NumberAnimation {
+        id: unFadeChilds
+        properties: "opacity"
+        to: 1
+        duration: 500
+    }
+
     onMenuOpening: {
         console.log ("AUI Menu is opening: thisMenu height: " + thisMenu.height + " _activeHeight: " + thisMenu._activeHeight)
         //Ok at this point we are opening, but the height is still 0,
         //but the internal propery _activeHeight does give us a positive value
-
-        //As a workaround until we get sliding going, make all other childs invisible
-        for(var i = 0; i < thisPage.children.length; i++) {
-            //But don't make the ListView itself invisible!
-            if (thisPage.children[i].objectName != menuListView.objectName) {
-                thisPage.children[i].visible = false;
-            }
-        }
+        //thisPage.children[i].opacity = thisPage.children[i].opacity / 10;
+        fadeChilds.targets = setChildsToFade();
+        fadeChilds.start();
     }
     onMenuClosing: {
-        console.log ("AUI Menu is closing: thisMenu height: " + thisMenu.height)
+        console.log ("AUI Menu is closing: thisMenu height: " + thisMenu.height);
+        //thisPage.children[i].opacity = thisPage.children[i].opacity * 10;
+        unFadeChilds.targets = setChildsToFade();
+        unFadeChilds.start();
+    }
+
+    //in theory we could call this just on menuOpening:, store in a variable
+    //and just reuse the varible on closing, thereby only unFading the same objects
+    //and saving a loop around the ojbects
+    function setChildsToFade() {
+        var childsToFade = [];
         for(var i = 0; i < thisPage.children.length; i++) {
             if (thisPage.children[i].objectName != menuListView.objectName) {
-                thisPage.children[i].visible = true;
+                //thisPage.children[i].opacity = thisPage.children[i].opacity * 10;
+                childsToFade.push(thisPage.children[i])
             }
         }
+        return childsToFade;
     }
 
 }
