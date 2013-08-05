@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 
 //This rectangle is intended as a "background" container item to group visual controls.
 //It provides the theme background color (so the app programmer does not need to worry about this).

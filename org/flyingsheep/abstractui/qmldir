@@ -1,3 +1,4 @@
+module org.flyingsheep.abstractui
 plugin abstractui
 AUIBackgroundRectangle 1.0 AUIBackgroundRectangle.qml
 AUIButton 1.0 AUIButton.qml

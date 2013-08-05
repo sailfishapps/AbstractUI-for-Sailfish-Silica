@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 //This rectangle is intended to be used as a highlight, e.g. in a ListView
@@ -8,5 +8,5 @@ import Sailfish.Silica 1.0
 //This means that the app programmer does not need to worry about what the theme colour is.
 //The color property can be overwritten in the instance
 Rectangle {
-    color: theme.highlightBackgroundColor
+    color: Theme.highlightBackgroundColor
 }
