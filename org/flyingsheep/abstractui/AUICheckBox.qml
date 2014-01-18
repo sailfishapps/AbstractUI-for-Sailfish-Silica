@@ -9,7 +9,4 @@ TextSwitch
 {
     property AUICheckBoxStyle platformStyle: null
 }
-/*
-CheckBox {
-}
-*/
+

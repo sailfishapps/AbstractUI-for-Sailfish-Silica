@@ -1,5 +1,8 @@
 import QtQuick 2.0
-import com.nokia.meego 1.0
+//import com.nokia.meego 1.0
+import Sailfish.Silica 1.0
 
-RadioButton {
+//RadioButton {
+TextSwitch {
+    property AUICheckBoxStyle platformStyle
 }

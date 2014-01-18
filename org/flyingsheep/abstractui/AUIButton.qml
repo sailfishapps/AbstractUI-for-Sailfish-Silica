@@ -1,38 +1,42 @@
 import QtQuick 2.0
 //import com.nokia.meego 1.0
 import Sailfish.Silica 1.0
-import Sailfish.Silica.theme 1.0
 
-/*
 //Button as drawn by sailfish has a horrible look and feel
-Button {
-    //property Style platformStyle: ButtonStyle {}
-    property AUIStyle platformStyle: null
-    property url iconSource
-    onClicked: console.log("button pressed")
-}
-*/
 
 BackgroundItem {
+    id: thisButton
+    property color primaryColor: "black"
+    property bool transparent: true
 
-    property alias text: thisLabel.text
-    property AUIButtonStyle platformStyle: null
+    property bool checked: false
+    property bool checkable: false
+
+    property alias text: label.text
     property url iconSource
     width: parent.width
     height: 120
     Label {
-        id: thisLabel
-        text: "Hello Sailors"
+        id: label
+        text: ""
         anchors.centerIn: parent
-//TODO: Qt5
-        //color: "white"
-        color: platformStyle.textColor
-
+        color: thisButton.primaryColor
+        visible: text != ""
     }
 
-    onPlatformStyleChanged: {
-        console.log("AUIButtonStyle changed to: " + platformStyle);
-        console.log("AUIButtonStyle mainColor changed to: " + platformStyle.mainColor);
-        console.log("AUIButtonStyle textColor changed to: " + platformStyle.textColor);
+    Image {
+        id: icon
+        anchors.left: label.visible ? parent.left : undefined
+        anchors.leftMargin: label.visible ? Theme.paddingLarge  : 0
+        anchors.centerIn: label.visible ? undefined : parent
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: -1
+        source: thisButton.iconSource
+        visible: source != ""
+    }
+
+    onPressed: {
+        console.log("icon.visible: " + icon.visible);
+        console.log("label.visible: " + label.visible);
     }
 }

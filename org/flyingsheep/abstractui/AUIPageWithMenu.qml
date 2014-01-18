@@ -26,6 +26,14 @@ Page {
     objectName: "thisPage"
     property Item tools: null;
     property int orientationLock: AUIPageOrientation.Automatic
+
+    property color backgroundColor: "white"
+    AUIBackgroundRectangle {
+        anchors.fill: parent
+        color: parent.backgroundColor
+        z: -9999
+    }
+
     property alias menuitems: menuModel.children
 
     //not sure if we actually need these signals, it may be enough to pass on the menu.active property via alias

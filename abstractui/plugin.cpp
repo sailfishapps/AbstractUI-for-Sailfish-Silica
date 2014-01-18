@@ -4,7 +4,7 @@
 #include "auimdialogstatus.h"
 #include "auimpageorientation.h"
 
-#include <qdeclarative.h>
+#include <qqml.h>
 
 void AbstractuiPlugin::registerTypes(const char *uri)
 {
@@ -14,6 +14,5 @@ void AbstractuiPlugin::registerTypes(const char *uri)
     qmlRegisterUncreatableType<AUIMPageOrientation>(uri, 1, 0, "AUIPageOrientation", "");
 }
 
-Q_EXPORT_PLUGIN2(abstractuiplugin, AbstractuiPlugin)
 
 

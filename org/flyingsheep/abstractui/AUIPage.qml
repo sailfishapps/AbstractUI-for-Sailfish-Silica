@@ -6,6 +6,7 @@ import org.flyingsheep.abstractui 1.0
 Page {
     property Item tools: null;
     property int orientationLock: AUIPageOrientation.Automatic
+    property color backgroundColor
 
 //We now have a dedicated AUIPageWithMenu element to support menus
 //This element is used for Pages that do not require a menu
