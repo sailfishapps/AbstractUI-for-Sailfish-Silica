@@ -1,4 +1,4 @@
-import QtMultimediaKit 1.1
+import QtMultimedia 5.0
 
 SoundEffect {
 }

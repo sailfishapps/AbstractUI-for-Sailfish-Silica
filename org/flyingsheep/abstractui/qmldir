@@ -21,11 +21,16 @@ AUIPageWithMenu 1.0 AUIPageWithMenu.qml
 AUIPageStackWindow 1.0 AUIPageStackWindow.qml
 AUIQueryDialog 1.0 AUIQueryDialog.qml
 AUIRadioButton 1.0 AUIRadioButton.qml
+AUISelectionDialog 1.0 AUISelectionDialog.qml
 AUISheet 1.0 AUISheet.qml
 AUIStyle 1.0 AUIStyle.qml
 AUISwitch 1.0 AUISwitch.qml
+AUITab 1.0 AUITab.qml
 AUITabButton 1.0 AUITabButton.qml
 AUITabGroup 1.0 AUITabGroup.qml
+AUITabIndicator 1.0 AUITabIndicator.qml
+AUITextArea 1.0 AUITextArea.qml
+AUITextField 1.0 AUITextField.qml
 AUIToolBarLayout 1.0 AUIToolBarLayout.qml
 AUIToolButton 1.0 AUIToolButton.qml
 AUIToolIcon 1.0 AUIToolIcon.qml

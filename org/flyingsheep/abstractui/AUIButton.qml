@@ -16,6 +16,7 @@ BackgroundItem {
     property url iconSource
     width: parent.width
     height: 120
+    preventStealing: true
     Label {
         id: label
         text: ""
